@@ -66,6 +66,7 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
 	/* function format     argument                                 interval signal */
   { battery_perc, "%s ", "BAT0",                                  5,       -1, },
+  { disk_free,   "%s ",  "/",                                     3,        0, },
 	{ datetime, "%s",      "%a %d %b %r",                           1,       -1, },
 };
 
