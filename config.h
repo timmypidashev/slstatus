@@ -64,8 +64,9 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 static const struct arg args[] = {
-	/* function format          argument interval signal */
-	{ datetime, "%s",           "%F %T", 1,       -1 },
+	/* function format     argument                                 interval signal */
+  { battery_perc, "%s ", "BAT0",                                  5,       -1, },
+	{ datetime, "%s",      "%a %d %b %r",                           1,       -1, },
 };
 
 /* maximum output string length */

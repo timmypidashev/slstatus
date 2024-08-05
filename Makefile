@@ -15,8 +15,6 @@ COM =\
 	components/hostname\
 	components/ip\
 	components/kernel_release\
-	components/keyboard_indicators\
-	components/keymap\
 	components/load_avg\
 	components/netspeeds\
 	components/num_files\
@@ -37,9 +35,6 @@ slstatus.o: slstatus.c slstatus.h arg.h config.h config.mk $(REQ:=.h)
 .c.o:
 	$(CC) -o $@ -c $(CPPFLAGS) $(CFLAGS) $<
 
-config.h:
-	cp config.def.h $@
-
 slstatus: slstatus.o $(COM:=.o) $(REQ:=.o)
 	$(CC) -o $@ $(LDFLAGS) $(COM:=.o) $(REQ:=.o) slstatus.o $(LDLIBS)
 
@@ -49,7 +44,7 @@ clean:
 dist:
 	rm -rf "slstatus-$(VERSION)"
 	mkdir -p "slstatus-$(VERSION)/components"
-	cp -R LICENSE Makefile README config.mk config.def.h \
+	cp -R LICENSE Makefile README config.mk config.h \
 	      arg.h slstatus.h slstatus.c $(REQ:=.c) $(REQ:=.h) \
 	      slstatus.1 "slstatus-$(VERSION)"
 	cp -R $(COM:=.c) "slstatus-$(VERSION)/components"
