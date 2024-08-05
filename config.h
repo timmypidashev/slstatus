@@ -65,6 +65,7 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format     argument                                 interval signal */
+  { ipv4,        "%s ",  "wlan0",                                 5,        0  },
   { wifi_perc,   "%s ",  "wlan0",                                 5,        0, },
   { battery_perc, "%s ", "BAT0",                                  5,       -1, },
   { disk_free,   "%s ",  "/",                                     3,        0, },
